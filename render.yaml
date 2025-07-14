@@ -1,10 +1,10 @@
 services:
   - type: web
-    name: saini-txt-direct
+    name: without-token-july
     plan: free
     env: docker
     dockerfilePath: Dockerfile
-    repo: 
+    repo: https://github.com/iryme786/Without-token-bot-july
     branch: main
     autoDeploy: false
     envVars:
