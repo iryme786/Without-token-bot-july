@@ -4,7 +4,7 @@ services:
     plan: free
     env: docker
     dockerfilePath: Dockerfile
-    repo: https://github.com/iryme786/Without-token-bot-july
+    repo: 
     branch: main
     autoDeploy: false
     envVars:
