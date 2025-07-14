@@ -10,15 +10,15 @@ def hello_world():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236-1.png">
+	<link rel="stylesheet" type="text/css" href="https://graph.org/file/0311790696e724424d8fb-db8bd1c1f279f3d92f.jpg">
     <titleSudoR2spr Repository</title>
-	<link rel="icon" type="image/x-icon" href="https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236-1.png">
+	<link rel="icon" type="image/x-icon" href="https://graph.org/file/0311790696e724424d8fb-db8bd1c1f279f3d92f.jpg">
 
 </head>
 
 <body>
     <div class="container" style="bg-dark text-red text-center py-3 mt-5">
-        <a href="https://github.com/nikhilsaini098" class="card">
+        <a href="https://t.me/lexm_8" class="card">
             <p>
               />▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄<br 
 	      />██░▄▄▄░█░▄▄▀█▄░▄██░▀██░█▄░▄██<br 
