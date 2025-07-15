@@ -32,10 +32,10 @@ def duration(filename):
 def get_mps_and_keys(api_url):
     response = requests.get(api_url)
     response_json = response.json()
-    mpd = response_json.get('mpd_url')
-    keys = response_json.get('keys')
+    mpd = response_json.get('MPD')
+    keys = response_json.get('KEYS')
     return mpd, keys
-   
+
 def exec(cmd):
         process = subprocess.run(cmd, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         output = process.stdout.decode()
@@ -76,7 +76,7 @@ async def pdf_download(url, file_name, chunk_size=1024 * 10):
             if chunk:
                 fd.write(chunk)
     return file_name   
-   
+
 
 def parse_vid_info(info):
     info = info.strip()
@@ -114,11 +114,11 @@ def vid_info(info):
             try:
                 if "RESOLUTION" not in i[2] and i[2] not in temp and "audio" not in i[2]:
                     temp.append(i[2])
-                    
+
                     # temp.update(f'{i[2]}')
                     # new_info.append((i[2], i[0]))
                     #  mp4,mkv etc ==== f"({i[1]})" 
-                    
+
                     new_info.update({f'{i[2]}':f'{i[0]}'})
 
             except:
@@ -134,7 +134,7 @@ async def decrypt_and_merge_video(mpd_url, keys_string, output_path, output_name
         cmd1 = f'yt-dlp -f "bv[height<={quality}]+ba/b" -o "{output_path}/file.%(ext)s" --allow-unplayable-format --no-check-certificate --external-downloader aria2c "{mpd_url}"'
         print(f"Running command: {cmd1}")
         os.system(cmd1)
-        
+
         avDir = list(output_path.iterdir())
         print(f"Downloaded files: {avDir}")
         print("Decrypting")
@@ -168,7 +168,7 @@ async def decrypt_and_merge_video(mpd_url, keys_string, output_path, output_name
             (output_path / "video.mp4").unlink()
         if (output_path / "audio.m4a").exists():
             (output_path / "audio.m4a").unlink()
-        
+
         filename = output_path / f"{output_name}.mp4"
 
         if not filename.exists():
@@ -200,7 +200,7 @@ async def run(cmd):
     if stderr:
         return f'[stderr]\n{stderr.decode()}'
 
-    
+
 
 def old_download(url, file_name, chunk_size = 1024 * 10):
     if os.path.exists(file_name):
@@ -282,7 +282,7 @@ def decrypt_file(file_path, key):
 
 async def download_and_decrypt_video(url, cmd, name, key):  
     video_path = await download_video(url, cmd, name)  
-    
+
     if video_path:  
         decrypted = decrypt_file(video_path, key)  
         if decrypted:  
@@ -302,10 +302,10 @@ async def send_vid(bot: Client, m: Message, cc, filename, thumb, name, prog, cha
             thumbnail = f"{filename}.jpg"
         else:
             thumbnail = thumb
-            
+
     except Exception as e:
         await m.reply_text(str(e))
-      
+
     dur = int(duration(filename))
     start_time = time.time()
 
